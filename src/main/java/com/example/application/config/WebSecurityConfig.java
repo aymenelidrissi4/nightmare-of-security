@@ -24,7 +24,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain web(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers(AntPathRequestMatcher.antMatcher(( "/all"))).denyAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher(( "/all"))).permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(withDefaults())
